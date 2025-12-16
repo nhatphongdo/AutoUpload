@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D22DFB49-7CA1-4BF2-919F-BBF311F5A2D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoUpload.Photoshop</RootNamespace>
+    <AssemblyName>AutoUpload.Photoshop</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.3D">
+      <HintPath>..\Reference\Aspose.3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.0.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q8-AnyCPU.7.0.5.501\lib\net40-client\Magick.NET-Q8-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncryptedPhotoshopBlock.cs" />
+    <Compile Include="EncryptedPhotoshopHeader.cs" />
+    <Compile Include="PhotoshopFile\Actions\AliasDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\BooleanDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\ClassDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\DescriptorStructure.cs" />
+    <Compile Include="PhotoshopFile\Actions\DoubleDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\EnumDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\EnumReferenceDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\FilePathDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\IDescriptorStructure.cs" />
+    <Compile Include="PhotoshopFile\Actions\LargeNumberDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\ListDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\LongDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\ObjectArrayDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\OffsetDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\PropertyDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\RawDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\ReferenceDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\StringDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\UnitDoubleDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\UnitDoublesDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\UnitFloatDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Actions\UnsignedIntegerDescriptor.cs" />
+    <Compile Include="PhotoshopFile\Compression\EndianReverser.cs" />
+    <Compile Include="PhotoshopFile\Compression\ImageData.cs" />
+    <Compile Include="PhotoshopFile\Compression\ImageDataFactory.cs" />
+    <Compile Include="PhotoshopFile\Compression\RawImage.cs" />
+    <Compile Include="PhotoshopFile\Compression\RleImage.cs" />
+    <Compile Include="PhotoshopFile\Compression\ZipImage.cs" />
+    <Compile Include="PhotoshopFile\Compression\ZipPredict16Image.cs" />
+    <Compile Include="PhotoshopFile\Compression\ZipPredict32Image.cs" />
+    <Compile Include="PhotoshopFile\Exceptions.cs" />
+    <Compile Include="PhotoshopFile\ImageResource.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\AlphaChannelNames.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\RawImageResource.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\ResolutionInfo.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\Thumbnail.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\UnicodeAlphaNames.cs" />
+    <Compile Include="PhotoshopFile\ImageResources\VersionInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\BlendingRanges.cs" />
+    <Compile Include="PhotoshopFile\Layers\Channel.cs" />
+    <Compile Include="PhotoshopFile\Layers\Layer.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerGroup.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\ArtboardLayerInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\InfoLayers.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\LayerSectionInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\PlacedLayerInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\LinkedLayer.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\LayerSmartObject.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\LayerUnicodeName.cs" />
+    <Compile Include="PhotoshopFile\Layers\LayerInfo\RawLayerInfo.cs" />
+    <Compile Include="PhotoshopFile\Layers\Mask.cs" />
+    <Compile Include="PhotoshopFile\LoadContext.cs" />
+    <Compile Include="PhotoshopFile\PsdBinaryReader.cs" />
+    <Compile Include="PhotoshopFile\PsdBinaryWriter.cs" />
+    <Compile Include="PhotoshopFile\PsdBlendMode.cs" />
+    <Compile Include="PhotoshopFile\PsdBlockLengthWriter.cs" />
+    <Compile Include="PhotoshopFile\PsdFile.cs" />
+    <Compile Include="PhotoshopFile\RleReader.cs" />
+    <Compile Include="PhotoshopFile\RleRowLengths.cs" />
+    <Compile Include="PhotoshopFile\RleWriter.cs" />
+    <Compile Include="PhotoshopFile\Util.cs" />
+    <Compile Include="PhotoshopHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoUpload.Shared\AutoUpload.Shared.csproj">
+      <Project>{cff35bc2-4ce6-4a2a-80a3-6dbfa0a13763}</Project>
+      <Name>AutoUpload.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
